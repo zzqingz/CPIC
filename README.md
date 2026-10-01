@@ -6,11 +6,12 @@
 <sup>*</sup> Equal contribution. <sup>†</sup> Corresponding author.
 
 <div>
+  <a href="https://arxiv.org/abs/xxx"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&amp;logoColor=white" alt="arXiv paper"></a>
+  <a href="https://huggingface.co/zzqingz/CPIC"><img src="https://img.shields.io/badge/Hugging%20Face-CPIC-FFD21E?logo=huggingface&amp;logoColor=FFD21E" alt="CPIC pretrained model"></a>
+  <a href="https://huggingface.co/datasets/zzqingz/CPICD"><img src="https://img.shields.io/badge/Hugging%20Face-CPICD-FFD21E?logo=huggingface&amp;logoColor=FFD21E" alt="CPICD dataset"></a>
   <a href="https://github.com/zzqingz/CPIC"><img src="https://visitor-badge.laobi.icu/badge?page_id=zzqingz.CPIC" alt="Visitors"></a>
   <a href="https://github.com/zzqingz/CPIC/stargazers"><img src="https://img.shields.io/github/stars/zzqingz/CPIC?style=social" alt="GitHub stars"></a>
 </div>
-
-[arXiv] [CPIC pretrained model] [CPICD dataset]
 
 <a id="news"></a>
 #### 🔥🔥🔥 News
@@ -28,10 +29,10 @@
 <a id="todo"></a>
 ## ⚒️ TODO
 
-- [ ] Release paper and supplementary material.
-- [ ] Release image-cropping demo and project page.
-- [ ] Release the CPICD benchmark.
-- [ ] Release pretrained model and inference code.
+- [x] Release paper and supplementary material.
+- [x] Release pretrained CPIC model and inference code.
+- [x] Release the CPICD benchmark.
+- [ ] Release training code.
 
 
 <a id="contents"></a>
@@ -42,6 +43,7 @@
 - [Contents](#contents)
 - [Method](#method)
 - [Inference](#inference)
+- [Dataset](#dataset)
 - [Results](#results)
 - [Citation](#citation)
 - [Acknowledgements](#acknowledgements)
@@ -74,10 +76,8 @@ pip install -r requirements.txt
 
 Download the complete **CPIC** checkpoint (approximately 8.5 GB of FP32 model weights, plus tokenizer and processor files). Everything needed for model loading is included in this checkpoint.
 
-The Hugging Face repository is pending release. We will replace `<CPIC_REPO_ID>` below with its published repository ID when available.
-
 ```bash
-hf download <CPIC_REPO_ID> --local-dir checkpoints/CPIC
+hf download zzqingz/CPIC --local-dir checkpoints/CPIC
 ```
 
 ### 3. Run inference
@@ -99,6 +99,17 @@ python inference.py --model checkpoints/CPIC \
 Supported formats: JPEG, PNG, WebP, BMP, and TIFF. Choose a new output directory outside the input folder for each run. Checkpoints are loaded from local paths; inference does not download files.
 
 Outputs are `crops/` (cropped PNG images, preserving relative folders) and `predictions.json`. Each successful record contains the input image path, original dimensions, model response, `bbox_2d` in the prompted 0–1000 coordinate system, `bbox_xyxy` in original-image pixels, and the crop path. Pixel coordinates retain floating-point precision; saved crops round the top-left corner down and the bottom-right corner up. Failed images are recorded with an `error` field, and the command exits with a nonzero status.
+
+<a id="dataset"></a>
+## 🤗 Dataset
+
+Download CPICD annotations from Hugging Face:
+
+```bash
+hf download zzqingz/CPICD --repo-type dataset --local-dir data/CPICD
+```
+
+`CPICD300.json` is a 300-image subset for convenient evaluation. Original-image download links are provided in the [dataset README](https://huggingface.co/datasets/zzqingz/CPICD/blob/main/README.md).
 
 <a id="results"></a>
 ## 🔎 Results
