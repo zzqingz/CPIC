@@ -6,7 +6,7 @@
 <sup>*</sup> Equal contribution. <sup>†</sup> Corresponding author.
 
 <div>
-  <a href="https://arxiv.org/abs/xxx"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&amp;logoColor=white" alt="arXiv paper"></a>
+  <a href="https://arxiv.org/abs/2610.00582"><img src="https://img.shields.io/badge/arXiv-2610.00582-b31b1b?logo=arxiv&amp;logoColor=white" alt="arXiv paper"></a>
   <a href="https://huggingface.co/zzqingz/CPIC"><img src="https://img.shields.io/badge/Hugging%20Face-CPIC-FFD21E?logo=huggingface&amp;logoColor=FFD21E" alt="CPIC pretrained model"></a>
   <a href="https://huggingface.co/datasets/zzqingz/CPICD"><img src="https://img.shields.io/badge/Hugging%20Face-CPICD-FFD21E?logo=huggingface&amp;logoColor=FFD21E" alt="CPICD dataset"></a>
   <a href="https://github.com/zzqingz/CPIC"><img src="https://visitor-badge.laobi.icu/badge?page_id=zzqingz.CPIC" alt="Visitors"></a>
@@ -16,6 +16,7 @@
 <a id="news"></a>
 #### 🔥🔥🔥 News
 
+- **2026-10-02:** Our paper is available on [arXiv](https://arxiv.org/abs/2610.00582).
 - **2026-09-30:** The CPIC repository is created. Code, model, and data releases are coming soon.
 
 ---
@@ -172,13 +173,11 @@ If you find this work useful in your research, please cite:
 @article{zhang2026cpic,
   title={Discrete Annotation, Continuous Preference: Rethinking Supervision for Accurate and Generalizable Aesthetic Image Cropping},
   author={Zhang, Ziqing and Liu, Xiao and Liu, Kai and Li, Jianze and Zhang, Weihang and Kong, Linghe and Zhang, Yulun},
-  journal={arXiv preprint arXiv:xxx},
+  journal={arXiv preprint arXiv:2610.00582},
   year={2026},
-  url={https://arxiv.org/abs/xxx}
+  url={https://arxiv.org/abs/2610.00582}
 }
 ```
-
-The citation will be updated with the arXiv identifier once available.
 
 <a id="acknowledgements"></a>
 ## 💖 Acknowledgements
